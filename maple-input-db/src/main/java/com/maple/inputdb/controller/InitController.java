@@ -26,13 +26,18 @@ public class InitController {
     /**
      * 初始化数据库
      *
-     * @param initModel
+     * @param initModel 数据库配置
      */
     @PostMapping("/initData")
     public void initData(@RequestBody InitModel initModel) {
         initDataConfig.initData(initModel);
     }
 
+    /**
+     * 校验数据库是否链接
+     *
+     * @return 配置完成
+     */
     @PostMapping("/check")
     public String check() {
         return "系统配置完成";
@@ -46,7 +51,12 @@ public class InitController {
         initDataConfig.deleteFile();
     }
 
-
+    /**
+     * 获取用户信息，如果不存在，初始化
+     *
+     * @param userName 用户账号
+     * @return 用户信息
+     */
     @PostMapping("/getUser")
     public MapleUser getUser(String userName) {
         return userService.getUser(userName);

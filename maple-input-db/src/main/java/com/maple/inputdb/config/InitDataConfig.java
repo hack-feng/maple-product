@@ -33,7 +33,7 @@ public class InitDataConfig {
             throw new RuntimeException("数据已完成初始化，请勿重复操作");
         }
 
-        // 检查数据库连接是否正确，OBS配置是否正确
+        // 检查数据库连接是否正确
         checkConnection(initModel);
 
         if (!new File(initConfigProperties.getInitFilePath() + initConfigProperties.getInitUserName()).exists()) {

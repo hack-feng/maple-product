@@ -56,7 +56,7 @@
             <version>1.18.24</version>
         </dependency>
 
-        <!--Lombok管理Getter/Setter/log等-->
+        <!--动态数据源-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
