@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+init:
+  config:
+    filePath: /srv/apps/config/
+    dbFileName: db.properfies
+    userFileName: user.properfies
