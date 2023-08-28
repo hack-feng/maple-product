@@ -3,6 +3,7 @@ maple-input-db/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+**/target/
 
 ### STS ###
 .apt_generated

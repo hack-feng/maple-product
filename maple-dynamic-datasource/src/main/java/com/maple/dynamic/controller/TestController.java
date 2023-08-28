@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://xiaoxiaofeng.com/>
  * @date 2023/8/21
  */
 @RestController
