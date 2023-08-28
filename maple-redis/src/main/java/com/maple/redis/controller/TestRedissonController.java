@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫  https://xiaoxiaofeng.com/
  * @date 2023/8/28
  */
 @RestController
@@ -49,7 +49,7 @@ public class TestRedissonController {
     /**
      * 插入map
      */
-    @PostMapping("/insertMap")
+    @PutMapping("/insertMap")
     public void insertMap(String key) {
         RMap<String, String> rMap = redissonUtil.getMap(key);
         rMap.put("key1", "xiaoxiaofeng");
