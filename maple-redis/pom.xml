@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.maple</groupId>
     <artifactId>maple-redis</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>maple-redis</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Spring Boot 整合 Redis</description>
     <properties>
         <java.version>8</java.version>
     </properties>

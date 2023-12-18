@@ -9,12 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.maple</groupId>
-    <artifactId>maple-input-db</artifactId>
+    <artifactId>maple-rabbit-mq</artifactId>
     <version>1.0.0</version>
-    <name>maple-input-db</name>
-    <description>Spring Boot 用户自定义数据库源</description>
+    <name>maple-rabbit-mq</name>
+    <description>Spring Boot 整合 RabbitMq</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -34,35 +34,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--使用Mysql数据库-->
+        <!-- 引入MQ依赖 -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
-        <!-- mybatis-plus的依赖 -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.2</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.7</version>
         </dependency>
-
-        <!--Lombok管理Getter/Setter/log等-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-            <version>1.18.24</version>
-        </dependency>
-
-        <!--动态数据源-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-
     </dependencies>
 
     <build>

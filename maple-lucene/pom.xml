@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.maple</groupId>
     <artifactId>maple-lucene</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>maple-lucene</name>
     <description>Spring Boot 整合 Lucene 案例</description>
     <properties>
