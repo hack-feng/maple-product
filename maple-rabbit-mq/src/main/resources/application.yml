@@ -6,3 +6,28 @@ spring:
     addresses: 127.0.0.1:5672
     username: guest
     password: guest
+    # 环境隔离，默认使用“/”(虚拟主机)
+    virtual-host: /
+    connection-timeout: 6000
+    listener:
+      direct:
+        retry:
+          # 是否开启重试机制
+          enabled: true
+          # 默认是3,是一共三次，而不是重试三次，三次包含了第一执行，所以只重试了两次
+          max-attempts: 3
+          # 重试间隔时间。毫秒
+          initial-interval: 2000
+      simple:
+        retry:
+          # 是否开启重试机制
+          enabled: true
+          # 默认是3,是一共三次，而不是重试三次，三次包含了第一执行，所以只重试了两次
+          max-attempts: 3
+          # 重试间隔时间。毫秒
+          initial-interval: 2000ms
+          #重试最大时间间隔（单位毫秒）
+          max-interval: 1200000ms
+          #间隔时间乘子，间隔时间*乘子=下一次的间隔时间，最大不能超过设置的最大间隔时间
+          multiplier: 2
+        default-requeue-rejected: false
