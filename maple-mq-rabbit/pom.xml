@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.maple</groupId>
-    <artifactId>maple-rabbit-mq</artifactId>
+    <artifactId>maple-mq-rabbit</artifactId>
     <version>1.0.0</version>
-    <name>maple-rabbit-mq</name>
+    <name>maple-mq-rabbit</name>
     <description>Spring Boot 整合 RabbitMq</description>
     <properties>
         <java.version>8</java.version>

@@ -30,6 +30,6 @@ SpringBoot版本：2.7.12
 
 项目整合Lucene，实现全文检索，搜索内容高亮展示。通过多个实例详细演示了索引操作，和多种模式搜索。
 
-* [整合RabbitMQ](/maple-rabbit-mq)
+* [整合RabbitMQ](/maple-mq-rabbit)
 
 项目整合RabbitMQ消息队列，以案例的形式展示了不同模式的交换机实现过程，演示了死信队列和延时队列应该怎么实现。

@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  */
 @SpringBootApplication
-public class MapleRabbitMqApplication {
+public class MapleMqRabbitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MapleRabbitMqApplication.class, args);
+        SpringApplication.run(MapleMqRabbitApplication.class, args);
     }
 
 }
