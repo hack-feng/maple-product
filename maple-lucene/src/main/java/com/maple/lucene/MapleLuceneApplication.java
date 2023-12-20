@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  */
 @SpringBootApplication
 @ComponentScan("com.maple")

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @RestController
@@ -17,11 +17,11 @@ public class SendMsgController {
 
     private final MoreToMoreSender moreToMoreSender;
 
+    private final DirectExchangeSender directExchangeSender;
+
     private final FanoutExchangeSender fanoutExchangeSender;
 
     private final TopicExchangeSender topicExchangeSender;
-
-    private final DirectExchangeSender directExchangeSender;
 
     private final AckSender ackSender;
 
@@ -38,10 +38,23 @@ public class SendMsgController {
         return "发送成功";
     }
 
+    /**
+     * 模拟多生产者多消费者
+     */
     @GetMapping("/moreToMoreSend")
     public String moreToMoreSend(String msg) {
         moreToMoreSender.sendOne(msg);
         moreToMoreSender.sendTwo(msg);
+        return "发送成功";
+    }
+
+    /**
+     * 模拟使用直接交换机发送消息
+     */
+    @GetMapping("/directExchangeSend")
+    public String directExchangeSend(String msg) {
+        directExchangeSender.sendA(msg);
+        directExchangeSender.sendB(msg);
         return "发送成功";
     }
 
@@ -56,13 +69,6 @@ public class SendMsgController {
         topicExchangeSender.sendA(msg);
         topicExchangeSender.sendB(msg);
         topicExchangeSender.sendC(msg);
-        return "发送成功";
-    }
-
-    @GetMapping("/directExchangeSend")
-    public String directExchangeSend(String msg) {
-        directExchangeSender.sendA(msg);
-        directExchangeSender.sendB(msg);
         return "发送成功";
     }
 
@@ -83,6 +89,4 @@ public class SendMsgController {
         delaySender.send(msg);
         return "发送成功";
     }
-
-
 }

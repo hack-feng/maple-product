@@ -8,13 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Configuration
 public class TopicExchangeConfig {
     /**
-     * 模拟广播发送消息
+     * 模拟主题交换机发送消息
      */
     @Bean
     public Queue topicQueueA() {
@@ -50,6 +50,4 @@ public class TopicExchangeConfig {
     public Binding bindingTopicExchangeC(Queue topicQueueC, TopicExchange topicExchange) {
         return BindingBuilder.bind(topicQueueC).to(topicExchange).with("topicQueue.#");
     }
-
-
 }

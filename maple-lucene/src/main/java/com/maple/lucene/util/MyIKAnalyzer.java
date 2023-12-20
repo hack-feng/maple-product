@@ -4,7 +4,7 @@
 //import org.apache.lucene.analysis.Tokenizer;
 //
 ///**
-// * @author 笑小枫 <https://xiaoxiaofeng.com/>
+// * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
 // * @date 2023/12/13
 // */
 //public class MyIKAnalyzer extends Analyzer {

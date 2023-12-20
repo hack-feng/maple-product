@@ -6,7 +6,7 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/19
  */
 @Component
@@ -17,7 +17,7 @@ public class DelaySender {
     private final AmqpTemplate rabbitTemplate;
 
     public void send(String msg) {
-        rabbitTemplate.convertAndSend("normalDelayQueue", msg);
+        rabbitTemplate.convertAndSend("delayQueue", msg);
         log.info("DelaySender 发送消息成功：" + msg);
     }
 }

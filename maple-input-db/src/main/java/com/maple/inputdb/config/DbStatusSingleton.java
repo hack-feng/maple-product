@@ -3,7 +3,7 @@ package com.maple.inputdb.config;
 /**
  * 数据库是否链接全部变量
  *
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/3/23
  */
 public class DbStatusSingleton {

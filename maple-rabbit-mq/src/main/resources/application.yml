@@ -10,14 +10,6 @@ spring:
     virtual-host: /
     connection-timeout: 6000
     listener:
-      direct:
-        retry:
-          # 是否开启重试机制
-          enabled: true
-          # 默认是3,是一共三次，而不是重试三次，三次包含了第一执行，所以只重试了两次
-          max-attempts: 3
-          # 重试间隔时间。毫秒
-          initial-interval: 2000
       simple:
         retry:
           # 是否开启重试机制

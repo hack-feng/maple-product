@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Component
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class DirectExchangeReceiver {
 
     /**
-     * 监听simpleQueue队列的消息，进行消费
+     * 监听directQueue.A队列的消息，进行消费
      */
     @RabbitListener(queues = "directQueue.A")
     public void directHandleA(String msg) {
@@ -21,16 +21,15 @@ public class DirectExchangeReceiver {
     }
 
     /**
-     * 监听simpleQueue队列的消息，进行消费
+     * 监听directQueue.B队列的消息，进行消费
      */
     @RabbitListener(queues = "directQueue.B")
     public void directHandleB(String msg) {
         log.info("directHandleB消费消息: " + msg);
     }
 
-
     /**
-     * 监听simpleQueue队列的消息，进行消费
+     * 监听directQueue.C队列的消息，进行消费
      */
     @RabbitListener(queues = "directQueue.C")
     public void directHandleC(String msg) {

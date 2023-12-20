@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Configuration
@@ -31,7 +31,6 @@ public class FanoutExchangeConfig {
         return new Queue("fanoutQueue.C");
     }
 
-
     @Bean
     public FanoutExchange fanoutExchange() {
         return new FanoutExchange("fanoutExchange");
@@ -51,7 +50,5 @@ public class FanoutExchangeConfig {
     public Binding bindingFanoutExchangeC(Queue fanoutQueueC, FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(fanoutQueueC).to(fanoutExchange);
     }	
-    
-    
     
 }

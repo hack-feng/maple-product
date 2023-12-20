@@ -6,7 +6,7 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Component
@@ -28,5 +28,4 @@ public class MoreToMoreSender {
         rabbitTemplate.convertAndSend("moreToMoreQueue", "MoreToMoreSender.sendTwo:" + msg);
         log.info("MoreToMoreSender sendTwo 发送消息成功：" + msg);
     }
-    
 }

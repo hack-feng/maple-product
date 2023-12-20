@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/3/10
  */
 @Slf4j

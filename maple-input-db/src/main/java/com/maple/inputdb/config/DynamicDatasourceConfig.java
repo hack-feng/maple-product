@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.util.Properties;
 
 /**
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/3/9
  */
 @Slf4j

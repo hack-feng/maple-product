@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Configuration
 public class SimpleQueueConfig {
 
     /**
-     * 模拟使用默认的交换机，进行消息发布消费
+     * 使用默认的交换机，进行消息发布消费
      */
     @Bean
     public Queue simpleQueue() {

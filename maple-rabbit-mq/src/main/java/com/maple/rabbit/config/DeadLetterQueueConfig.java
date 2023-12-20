@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/19
  */
 @Configuration
@@ -19,7 +19,7 @@ public class DeadLetterQueueConfig {
 
     @Bean
     public Queue normalQueue() {
-        //声明该队列的死信消息发送到的 交换机 (队列添加了这个参数之后会自动与该交换机绑定,并设置路由键,不需要开发者手动设置)
+        // 声明该队列的死信消息发送到的 交换机 (队列添加了这个参数之后会自动与该交换机绑定,并设置路由键,不需要开发者手动设置)
         return QueueBuilder.durable("normalQueue")
                 .withArgument("x-message-ttl", 5000)
                 .withArgument("x-dead-letter-exchange", "dlx-exchange")

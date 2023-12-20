@@ -3,7 +3,7 @@ package com.maple.inputdb.bean;
 import lombok.Data;
 
 /**
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/3/10
  */
 @Data

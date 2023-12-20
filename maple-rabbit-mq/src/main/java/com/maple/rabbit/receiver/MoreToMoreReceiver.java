@@ -5,13 +5,12 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/18
  */
 @Component
 @Slf4j
 public class MoreToMoreReceiver {
-
 
     /**
      * 监听moreToMoreQueue队列的消息，进行消费
@@ -21,7 +20,6 @@ public class MoreToMoreReceiver {
         log.info("moreToMoreHandleOne消费消息: " + msg);
     }
 
-
     /**
      * 监听moreToMoreQueue队列的消息，进行消费
      */
@@ -29,7 +27,6 @@ public class MoreToMoreReceiver {
     public void moreToMoreHandleTwo(String msg) {
         log.info("moreToMoreHandleTwo消费消息: " + msg);
     }
-
 
     /**
      * 监听moreToMoreQueue队列的消息，进行消费

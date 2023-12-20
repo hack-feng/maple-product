@@ -26,7 +26,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author 笑小枫 <https://xiaoxiaofeng.com/>
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2023/12/14
  */
 @RestController
