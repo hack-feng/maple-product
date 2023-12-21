@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  # 配置数据库连接
+  datasource:
+    # 数据库连接地址及常用配置
+    url: jdbc:mysql://127.0.0.1:3306/maple?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    # 数据库连接驱动
+    driverClassName: com.mysql.cj.jdbc.Driver
+    # 数据库用户
+    username: root
+    # 数据库用户密码
+    password: Zhang123
+
+# 配置mybatis-plus的xml和bean的目录
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰功能
+    map-underscore-to-camel-case: true
+    # 日志打印功能
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #逻辑删除配置
+  global-config:
+    db-config:
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
