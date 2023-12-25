@@ -4,6 +4,7 @@ maple-input-db/target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 **/target/
+logs/
 
 ### STS ###
 .apt_generated
