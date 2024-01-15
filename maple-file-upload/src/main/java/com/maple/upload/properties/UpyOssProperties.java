@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 又拍云上传配置
  *
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2024/1/10
  */
 @Data

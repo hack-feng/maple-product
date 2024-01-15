@@ -1,23 +1,30 @@
 package com.maple.upload.properties;
 
-import com.maple.upload.config.QiNiuZoneEnum;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * 七牛云配置
  *
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2024/1/10
  */
 @Data
 public class QiNiuProperties {
 
+    @Value("${file.qiniuyun.accessKey}")
     private String accessKey;
 
+    @Value("${file.qiniuyun.secretKey}")
     private String secretKey;
 
+    @Value("${file.qiniuyun.bucket}")
     private String bucket;
+    
+    @Value("${file.qiniuyun.regionId}")
+    private String regionId;
 
-    private QiNiuZoneEnum zone;
+    @Value("${file.qiniuyun.showUrl}")
+    private String showUrl;
 
 }

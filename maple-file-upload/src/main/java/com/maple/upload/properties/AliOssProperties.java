@@ -12,24 +12,33 @@ package com.maple.upload.properties;
 
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * 阿里云OSS配置
  *
- * @author zhangfuzeng
+ * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2024/1/10
  */
 @Data
 @Configuration
 public class AliOssProperties {
 
+    @Value("${file.oss.bucketName}")
     private String bucketName;
 
+    @Value("${file.oss.accessKeyId}")
     private String accessKeyId;
 
-    private String accessKeySecret;
+    @Value("${file.oss.secretAccessKey}")
+    private String secretAccessKey;
 
+    @Value("${file.oss.endpoint}")
     private String endpoint;
+
+    @Value("${file.oss.showUrl}")
+    private String showUrl;
+
 
 }

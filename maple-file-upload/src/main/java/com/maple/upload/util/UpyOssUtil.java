@@ -69,7 +69,7 @@ public class UpyOssUtil {
             Response response = restManager.writeFile(objectKey, inputStream, null);
             log.info(String.format("又拍云上传结束，文件名：%s，返回结果：%s", objectKey, response.isSuccessful()));
             if (response.isSuccessful()) {
-                return fileProperties.getShowUrl() + fileName;
+                return fileProperties.getShowUrl() + objectKey;
             }
         } catch (IOException | UpException e) {
             log.error("又拍云oss上传文件失败", e);
