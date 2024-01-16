@@ -21,6 +21,7 @@ import java.io.InputStream;
  * 华为云OBS 对象存储工具类
  * 华为云OBS官方sdk使用文档：https://support.huaweicloud.com/sdk-java-devg-obs/obs_21_0101.html
  * 华为云OBS操作指南：https://support.huaweicloud.com/ugobs-obs/obs_41_0002.html
+ * 华为云各服务应用区域和各服务的终端节点：https://developer.huaweicloud.com/endpoint?OBS
  *
  * @author 笑小枫
  * @date 2022/7/22

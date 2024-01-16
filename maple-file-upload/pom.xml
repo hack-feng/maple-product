@@ -48,7 +48,6 @@
             <version>3.8.1</version>
         </dependency>
 
-        <!--https://support.huaweicloud.com/obs_faq/obs_faq_0164.html-->
         <!-- 华为云OBS -->
         <dependency>
             <groupId>com.huaweicloud</groupId>

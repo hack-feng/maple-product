@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Slf4j
 @RestController
 @AllArgsConstructor
-@RequestMapping("/upyOss")
+@RequestMapping("/aliOss")
 public class AliOssController {
 
     private final AliOssUtil aliOssUtil;

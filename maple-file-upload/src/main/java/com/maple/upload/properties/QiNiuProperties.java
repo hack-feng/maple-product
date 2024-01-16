@@ -2,6 +2,7 @@ package com.maple.upload.properties;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * 七牛云配置
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @date 2024/1/10
  */
 @Data
+@Configuration
 public class QiNiuProperties {
 
     @Value("${file.qiniuyun.accessKey}")

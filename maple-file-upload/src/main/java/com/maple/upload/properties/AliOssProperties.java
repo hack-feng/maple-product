@@ -39,6 +39,4 @@ public class AliOssProperties {
 
     @Value("${file.oss.showUrl}")
     private String showUrl;
-
-
 }

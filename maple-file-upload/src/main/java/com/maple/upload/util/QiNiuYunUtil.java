@@ -19,6 +19,7 @@ import java.util.Objects;
  * 
  * 七牛云 对象存储工具类
  * 七牛云官方sdk：https://developer.qiniu.com/kodo/1239/java
+ * 七牛云存储区域表链接：https://developer.qiniu.com/kodo/1671/region-endpoint-fq
  * 
  * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2022/3/24

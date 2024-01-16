@@ -16,6 +16,7 @@ import java.io.InputStream;
  * 阿里云OSS 对象存储工具类
  * 阿里云OSS官方sdk使用文档：https://help.aliyun.com/zh/oss/developer-reference/java
  * 阿里云OSS操作指南：https://help.aliyun.com/zh/oss/user-guide
+ * 公共云下OSS Region和Endpoint对照表：https://help.aliyun.com/zh/oss/user-guide/regions-and-endpoints
  * 
  * @author 笑小枫 <https://www.xiaoxiaofeng.com/>
  * @date 2024/1/15
@@ -38,13 +39,13 @@ public class AliOssUtil {
         //构造一个OSS对象的配置类
         OSS ossClient = new OSSClientBuilder().build(aliOssProperties.getEndpoint(), aliOssProperties.getAccessKeyId(), aliOssProperties.getSecretAccessKey());
         try (InputStream inputStream = file.getInputStream()) {
-            log.info(String.format("七牛云上传开始，原文件名：%s，上传后的文件名：%s", fileName, objectKey));
+            log.info(String.format("阿里云OSS上传开始，原文件名：%s，上传后的文件名：%s", fileName, objectKey));
             PutObjectResult result = ossClient.putObject(aliOssProperties.getBucketName(), objectKey, inputStream);
-            log.info(String.format("七牛云上传结束，文件名：%s，返回结果：%s", objectKey, result.toString()));
+            log.info(String.format("阿里云OSS上传结束，文件名：%s，返回结果：%s", objectKey, result.toString()));
             return aliOssProperties.getShowUrl() + objectKey;
         } catch (Exception e) {
-            log.error("调用七牛云失败", e);
-            throw new RuntimeException("调用七牛云失败");
+            log.error("调用阿里云OSS失败", e);
+            throw new RuntimeException("调用阿里云OSS失败");
         }
     }
 }

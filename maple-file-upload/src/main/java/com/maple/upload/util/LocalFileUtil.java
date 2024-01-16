@@ -37,6 +37,9 @@ public class LocalFileUtil {
             "image/jpeg",
             "image/bmp");
 
+    /**
+     * 上传图片
+     */
     public String uploadImage(MultipartFile file) {
         // 检查图片类型
         String contentType = file.getContentType();
@@ -73,6 +76,9 @@ public class LocalFileUtil {
         return fileName;
     }
 
+    /**
+     * 批量上传文件
+     */
     public List<Map<String, Object>> uploadFiles(MultipartFile[] files) {
         int size = 0;
         for (MultipartFile file : files) {

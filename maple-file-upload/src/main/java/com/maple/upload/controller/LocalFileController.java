@@ -20,7 +20,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @AllArgsConstructor
-@RequestMapping("/example")
+@RequestMapping("/local")
 public class LocalFileController {
 
     private final LocalFileUtil fileUtil;
