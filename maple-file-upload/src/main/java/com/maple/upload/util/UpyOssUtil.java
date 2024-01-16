@@ -32,7 +32,7 @@ public class UpyOssUtil {
     private final UpyOssProperties fileProperties;
 
     /**
-     * 根据url上传文件到七牛云
+     * 根据url上传文件到又拍云
      */
     public String uploadUpy(String url) {
         // 组建上传的文件名称，命名规则可自定义更改
