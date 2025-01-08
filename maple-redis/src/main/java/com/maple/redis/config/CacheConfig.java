@@ -9,6 +9,7 @@ import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -29,11 +30,12 @@ import java.time.Duration;
 public class CacheConfig extends CachingConfigurerSupport {
 
     /**
-     * 缓存管理器。可以管理多个缓存
+     * 默认缓存管理器
      * 只有CacheManger才能扫描到cacheable注解
      * spring提供了缓存支持Cache接口，实现了很多个缓存类，其中包括RedisCache。但是我们需要对其进行配置，这里就是配置RedisCache
      */
     @Bean
+    @Primary
     public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
         return RedisCacheManager.RedisCacheManagerBuilder
                 //Redis链接工厂
@@ -44,6 +46,29 @@ public class CacheConfig extends CachingConfigurerSupport {
                 .transactionAware()
                 //对于不同的cacheName我们可以设置不同的过期时间
                 .withCacheConfiguration("cache2:cacheByUser", getCacheConfigurationWithTtl(Duration.ofHours(2)))
+                .build();
+    }
+
+    /**
+     * 创建并返回一个CacheManager Bean，用于管理Redis缓存。
+     * 主要返回结果为null时使用，会缓存null值，缓存时间为10分钟，防止缓存穿透。
+     * 使用时通过 cacheManager = "cacheNullManager" 指定使用该缓存管理器。
+     */
+    @Bean
+    public CacheManager cacheNullManager(RedisConnectionFactory redisConnectionFactory) {
+        return RedisCacheManager.RedisCacheManagerBuilder
+                //Redis链接工厂
+                .fromConnectionFactory(redisConnectionFactory)
+                //缓存配置 通用配置  默认存储一小时
+                .cacheDefaults(RedisCacheConfiguration
+                        .defaultCacheConfig()
+                        // 设置key为String
+                        .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                        // 设置value 为自动转Json的Object
+                        .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.json()))
+                        .entryTtl(Duration.ofMinutes(10)))
+                //配置同步修改或删除  put/evict
+                .transactionAware()
                 .build();
     }
 
@@ -64,7 +89,9 @@ public class CacheConfig extends CachingConfigurerSupport {
                 .entryTtl(duration);
     }
 
-    //缓存的异常处理
+    /**
+     * 缓存的异常处理
+     */
     @Bean
     @Override
     public CacheErrorHandler errorHandler() {
