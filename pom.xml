@@ -9,7 +9,17 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>maple-logback</module>
+        <module>maple-knife4j</module>
+        <module>maple-file-upload</module>
+        <module>maple-flyway</module>
+        <module>maple-empty</module>
+        <module>maple-dynamic-datasource</module>
+        <module>maple-mq-rabbit</module>
         <module>maple-multi-thread</module>
+        <module>maple-mybatis-plus</module>
+        <module>maple-lucene</module>
+        <module>maple-es</module>
     </modules>
 
     <properties>
